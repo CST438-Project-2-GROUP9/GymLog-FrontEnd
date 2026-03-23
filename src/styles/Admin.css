@@ -1,0 +1,125 @@
+.admin_controller {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: #f4f6f8;
+}
+
+.cardStyle {
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.titleStyle {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #222;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.admin-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-btn:hover {
+    background-color: #357abd;
+}
+
+.secondary-btn {
+    background-color: #6c757d;
+}
+
+.secondary-btn:hover {
+    background-color: #565e64;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #b02a37;
+}
+
+.admin-btn-green {
+    background-color: #198754;
+}
+
+.admin-btn-green:hover {
+    background-color: #146c43;
+}
+
+.admin-message {
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.admin-loading {
+    margin-bottom: 12px;
+    color: #4a90e2;
+    font-weight: 500;
+}
+
+.users-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.user-card {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-card:last-child {
+    border-bottom: none;
+}
+
+.user-card p {
+    margin: 6px 0;
+    color: #333;
+}
+
+.no-users {
+    text-align: center;
+    color: #777;
+    padding: 20px 0;
+}
