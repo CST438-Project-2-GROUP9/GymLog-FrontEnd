@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../styles/Admin.css'
+import Navbar from '../components/Navbar'
 
 export default function Admin() {
     const [users, setUsers] = useState([])
@@ -109,70 +110,73 @@ export default function Admin() {
     }
 
     return (
-        <div className="admin_controller">
-            <div className="cardStyle">
-                <h1 className="titleStyle">Admin Page</h1>
+        <>
+            <Navbar isAdmin={true} />
+            <div className="admin_controller">
+                <div className="cardStyle">
+                    <h1 className="titleStyle">Admin Page</h1>
 
-                <div className="admin-actions">
-                    <input
-                        type="text"
-                        placeholder="Search by user id"
-                        value={searchId}
-                        onChange={(e) => setSearchId(e.target.value)}
-                        className="admin-input"
-                    />
-                    <button onClick={handleSearch} className="admin-btn">
-                        Search
-                    </button>
-                    <button onClick={fetchUsers} className="admin-btn secondary-btn">
-                        Show All
-                    </button>
-                </div>
+                    <div className="admin-actions">
+                        <input
+                            type="text"
+                            placeholder="Search by user id"
+                            value={searchId}
+                            onChange={(e) => setSearchId(e.target.value)}
+                            className="admin-input"
+                        />
+                        <button onClick={handleSearch} className="admin-btn">
+                            Search
+                        </button>
+                        <button onClick={fetchUsers} className="admin-btn secondary-btn">
+                            Show All
+                        </button>
+                    </div>
 
-                <div className="admin-actions">
-                    <input
-                        type="text"
-                        placeholder="Enter user id"
-                        value={actionUserId}
-                        onChange={(e) => setActionUserId(e.target.value)}
-                        className="admin-input"
-                    />
-                    <button onClick={handleDelete} className="admin-btn delete-btn">
-                        Delete User
-                    </button>
-                    <button
-                        onClick={() => handleUpdateAdminStatus(true)}
-                        className="admin-btn admin-btn-green"
-                    >
-                        Make Admin
-                    </button>
+                    <div className="admin-actions">
+                        <input
+                            type="text"
+                            placeholder="Enter user id"
+                            value={actionUserId}
+                            onChange={(e) => setActionUserId(e.target.value)}
+                            className="admin-input"
+                        />
+                        <button onClick={handleDelete} className="admin-btn delete-btn">
+                            Delete User
+                        </button>
+                        <button
+                            onClick={() => handleUpdateAdminStatus(true)}
+                            className="admin-btn admin-btn-green"
+                        >
+                            Make Admin
+                        </button>
 
-                    <button
-                        onClick={() => handleUpdateAdminStatus(false)}
-                        className="admin-btn secondary-btn"
-                    >
-                        Remove Admin
-                    </button>
-                </div>
+                        <button
+                            onClick={() => handleUpdateAdminStatus(false)}
+                            className="admin-btn secondary-btn"
+                        >
+                            Remove Admin
+                        </button>
+                    </div>
 
-                {message && <p className="admin-message">{message}</p>}
-                {loading && <p className="admin-loading">Loading...</p>}
+                    {message && <p className="admin-message">{message}</p>}
+                    {loading && <p className="admin-loading">Loading...</p>}
 
-                <div className="users-container">
-                    {users.length > 0 ? (
-                        users.map((user) => (
-                            <div key={user.user_id} className="user-card">
-                                <p><strong>ID:</strong> {user.id}</p>
-                                <p><strong>Username:</strong> {user.username}</p>
-                                {/*This means if user.isAdmin is True the first ? this value then : means else value*/}
-                                <p><strong>Admin:</strong> {user.isAdmin ? 'True' : 'False' }</p>
-                            </div>
-                        ))
-                    ) : (
-                        !loading && <p className="no-users">No users found.</p>
-                    )}
+                    <div className="users-container">
+                        {users.length > 0 ? (
+                            users.map((user) => (
+                                <div key={user.user_id} className="user-card">
+                                    <p><strong>ID:</strong> {user.id}</p>
+                                    <p><strong>Username:</strong> {user.username}</p>
+                                    {/*This means if user.isAdmin is True the first ? this value then : means else value*/}
+                                    <p><strong>Admin:</strong> {user.isAdmin ? 'True' : 'False' }</p>
+                                </div>
+                            ))
+                        ) : (
+                            !loading && <p className="no-users">No users found.</p>
+                        )}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
