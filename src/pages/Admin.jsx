@@ -18,7 +18,7 @@ export default function Admin() {
             setLoading(true)
             setMessage('')
 
-            const res = await fetch('http://localhost:8080/admin/users', {
+            const res = await fetch('https://gymlog-backend-5.onrender.com/admin/users', {
                 credentials: 'include'
                 })
             if (!res.ok) throw new Error('Failed to fetch users')
@@ -38,7 +38,7 @@ export default function Admin() {
             setMessage('')
             console.log('searchId:', searchId)
 
-            const res = await fetch(`http://localhost:8080/admin/users/${searchId}`, {
+            const res = await fetch(`https://gymlog-backend-5.onrender.com/admin/users/${searchId}`, {
                 credentials: 'include'
             })
             if (!res.ok) throw new Error('User not found')
@@ -62,7 +62,7 @@ export default function Admin() {
         try {
             setMessage('')
 
-            const res = await fetch(`http://localhost:8080/admin/users/${actionUserId}`, {
+            const res = await fetch(`https://gymlog-backend-5.onrender.com/admin/users/${actionUserId}`, {
                 method: 'DELETE',
                 credentials: 'include'
             })
@@ -86,7 +86,7 @@ export default function Admin() {
         try {
             setMessage('')
 
-            const res = await fetch(`http://localhost:8080/admin/users/${actionUserId}?status=${status}`, {
+            const res = await fetch(`https://gymlog-backend-5.onrender.com/admin/users/${actionUserId}?status=${status}`, {
                 method: 'PATCH',
                 credentials: 'include',
             })
