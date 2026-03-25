@@ -1,0 +1,123 @@
+.exercises-page-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #f4f6f8; /* Matches Admin background */
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.exercise-card-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 320px;
+}
+
+/* Header & Tabs */
+.exercise-header {
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #666;
+}
+
+.active-tab {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+}
+
+/* List Items */
+.exercise-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.exercise-item:hover {
+    background-color: #f9f9f9;
+}
+
+.exercise-name {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Controls & Inputs */
+.exercise-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.exercise-controls select {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Stats for the "Linked" side */
+.stat-group {
+    text-align: center;
+    background: #f0fdf4;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.6rem;
+    color: #666;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #198754;
+}
+
+/* Workout Highlight Color */
+.workout-side {
+    border-top: 5px solid #198754; /* Green accent for the active workout */
+}
