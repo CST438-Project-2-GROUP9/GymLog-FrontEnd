@@ -3,34 +3,32 @@ import { createContext, useContext, useEffect, useState } from "react";
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
+    const API_BASE =
+        import.meta.env.VITE_API_BASE_URL ?? "https://gymlog-backend-5.onrender.com";
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const checkAuth = async () => {
-            try {
-                const res = await fetch(
-                    "https://gymlog-backend-5.onrender.com/user/currentUser",
-                    {
-                        credentials: "include",
-                    }
-                );
-
+        fetch(`${API_BASE}/user/currentUser`, {
+            credentials: "include",
+        })
+            .then((res) => {
                 if (!res.ok) {
                     throw new Error("Not authenticated");
                 }
-
-                const data = await res.json();
+                return res.json();
+            })
+            .then((data) => {
                 setUser(data);
-            } catch {
+            })
+            .catch(() => {
                 setUser(null);
-            } finally {
+            })
+            .finally(() => {
                 setLoading(false);
-            }
-        };
-
-        checkAuth();
-    }, []);
+            });
+    }, [API_BASE]);
 
     return (
         <AuthContext.Provider value={{ user, setUser, loading }}>
