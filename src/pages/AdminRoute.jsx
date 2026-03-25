@@ -6,7 +6,7 @@ export default function AdminRoute({ children }) {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:8080/user/currentUser", {
+        fetch("https://gymlog-backend-5.onrender.com/user/currentUser", {
             credentials: "include",
         })
             .then((res) => {
