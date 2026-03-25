@@ -9,9 +9,12 @@ export default function AdminRoute({ children }) {
     const [notLoggedIn, setNotLoggedIn] = useState(false);
 
     useEffect(() => {
+ VPAddRem
         let cancelled = false;
 
         fetch(`${API_BASE}/user/currentUser`, {
+       fetch("https://gymlog-backend-5.onrender.com/user/currentUser", {
+ main
             credentials: "include",
         })
             .then(async (res) => {

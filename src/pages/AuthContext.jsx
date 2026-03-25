@@ -7,24 +7,29 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8080/user/currentUser", {
-            credentials: "include", // important if using session/cookies
-        })
-            .then((res) => {
+        const checkAuth = async () => {
+            try {
+                const res = await fetch(
+                    "https://gymlog-backend-5.onrender.com/user/currentUser",
+                    {
+                        credentials: "include",
+                    }
+                );
+
                 if (!res.ok) {
                     throw new Error("Not authenticated");
                 }
-                return res.json();
-            })
-            .then((data) => {
+
+                const data = await res.json();
                 setUser(data);
-            })
-            .catch(() => {
+            } catch {
                 setUser(null);
-            })
-            .finally(() => {
+            } finally {
                 setLoading(false);
-            });
+            }
+        };
+
+        checkAuth();
     }, []);
 
     return (

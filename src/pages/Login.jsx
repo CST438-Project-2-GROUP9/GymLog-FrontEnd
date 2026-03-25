@@ -6,7 +6,7 @@ export default function Login() {
 
     function handleGoogleLogin() {
         setMessage("Redirecting to Google...");
-        window.location.href = "http://localhost:8080/oauth2/authorization/google";
+        window.location.href = "https://gymlog-backend-5.onrender.com/oauth2/authorization/google";
     }
 
     return (
