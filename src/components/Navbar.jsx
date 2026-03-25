@@ -3,7 +3,7 @@ import '../styles/Navbar.css'
 
 export default function Navbar({ isAdmin = false }) {
     const handleLogout = () => {
-        window.location.href = 'http://localhost:8080/logout'
+        window.location.href = 'https://gymlog-backend-5.onrender.com/logout'
     }
 
     return (
