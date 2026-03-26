@@ -33,6 +33,13 @@ export default function Navbar({ isAdmin = false }) {
                     Workouts
                 </NavLink>
 
+                <NavLink
+                    to="/exercises"
+                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                >
+                    Exercises
+                </NavLink>
+
                 {isAdmin && (
                     <NavLink
                         to="/admin"
