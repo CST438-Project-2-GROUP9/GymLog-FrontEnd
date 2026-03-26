@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import AdminRoute from "./pages/AdminRoute";
 import Profile from "./pages/Profile";
-import Workout from "./pages/Workout";
+// import Workout from "./pages/Workout";
 import WorkoutsPage from "./pages/WorkoutsPage";
 import Exercises from "./pages/Exercises";
 
