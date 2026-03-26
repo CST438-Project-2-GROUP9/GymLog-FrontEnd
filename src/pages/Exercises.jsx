@@ -28,7 +28,7 @@ export default function Exercises() {
             setLoading(true);
             setMessage('');
 
-            const res = await fetch('http://localhost:8080/api/exercises', {
+            const res = await fetch('https://gymlog-backend-5.onrender.com/api/exercises', {
                 credentials: 'include'
                 })
             if (!res.ok) throw new Error('Failed to fetch exercises');
@@ -53,7 +53,7 @@ export default function Exercises() {
 
     const fetchCurrentWorkout = async () => {
         try {
-            const res = await fetch(`http://localhost:8080/api/workouts/${workoutId}/exercises`, {
+            const res = await fetch(`https://gymlog-backend-5.onrender.com/api/workouts/${workoutId}/exercises`, {
                 credentials: 'include'
             });
 
@@ -88,7 +88,7 @@ export default function Exercises() {
         try {
             const { sets, reps } = inputs[exerciseId];
 
-            const res = await fetch(`http://localhost:8080/api/workouts/${workoutId}/exercises`, {
+            const res = await fetch(`https://gymlog-backend-5.onrender.com/api/workouts/${workoutId}/exercises`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
