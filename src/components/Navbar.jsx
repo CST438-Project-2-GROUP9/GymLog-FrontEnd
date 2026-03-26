@@ -26,6 +26,12 @@ export default function Navbar({ isAdmin = false }) {
                 >
                     Profile
                 </NavLink>
+                <NavLink
+                    to="/workouts"
+                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                >
+                    Workouts
+                </NavLink>
 
                 <NavLink
                     to="/exercises"
