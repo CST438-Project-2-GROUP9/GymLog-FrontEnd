@@ -1,24 +1,43 @@
-# GymLog
-Fitness Tracker
+# GymLog-FrontEnd CST438 Group 9 P2
+Fitness Tracker FrontEnd
 
-#Mockup
-<img width="1160" height="579" alt="Mockup" src="https://github.com/user-attachments/assets/2b1fe5fa-f63e-4eb6-ac94-ba223a4a7cec" />
+# Description
+It shows a UI for FitnessTrackerApp which fetches informations in the backend (using render)
 
-#ERD
-<img width="1155" height="582" alt="ERD" src="https://github.com/user-attachments/assets/c4d32701-ba68-4f82-8621-ba1167792662" />
-# React + Vite
+# Team Members
+- Neil Cabanilla
+- Isaiah Artiaga
+- Dima Krayilo
+- Victor Perez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tech Stack
+- React
+- Node
+- Vite
 
-Currently, two official plugins are available:
+# Setup
+```
+npm install
+npm run dev
+```
+Currently hosting at localhost:5173, fetches data from https://gymlog-backend-5.onrender.com
+
+| Route | Description | 
+|----------|----------|
+| /login | Logging in | 
+| /dashboard | Main Menu |
+| /profile | User Information  |
+| /workoutspage | Shows Workout  |
+| /exercises | Shows Exercises |
+| /admin | Shows all user (GET, DELETE, PATCH) |
+
+# Project Structure
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/0659c24f-720b-47b5-811c-0e15556f6f01" />
+
+
+# Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
