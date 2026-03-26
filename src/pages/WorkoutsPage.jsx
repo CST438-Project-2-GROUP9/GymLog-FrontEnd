@@ -18,7 +18,10 @@ export default function WorkoutsPage() {
     }
 
     useEffect(() => {
-        load();
+        const run = async () => {
+            await load();
+        };
+        run();
     }, []);
 
     async function onAdd(e) {
