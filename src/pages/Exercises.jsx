@@ -123,6 +123,12 @@ export default function Exercises() {
         <>
             <Navbar isAdmin={user?.isAdmin} />
 
+            {workoutId === 14 && (
+                <div className="test-warning">
+                    You entered this page without selecting a workout! <strong>Testing Mode: Workout #14</strong>
+                </div>
+            )}
+
             <div className="exercises-page-wrapper">
 
                 {/* SECTION 1: EXERCISE LIBRARY */}

@@ -47,6 +47,16 @@
     border-color: #4a90e2;
 }
 
+.test-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ffeeba;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 /* List Items */
 .exercise-list {
     max-height: 500px;
