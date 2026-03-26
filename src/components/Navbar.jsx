@@ -53,6 +53,8 @@ export default function Navbar({ isAdmin = false }) {
             <button className="navbar-logout" onClick={handleLogout}>
                 Logout
             </button>
+
+
         </nav>
     )
 }
