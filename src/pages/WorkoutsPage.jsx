@@ -100,7 +100,7 @@ export default function WorkoutsPage() {
   </span>
 
                             <div style={{ display: "flex", gap: 8 }}>
-                                <button onClick={() => navigate(`/exercises?workoutId=${w.id}`)}>
+                                <button onClick={() => navigate('/exercises', { state: { workoutId: w.id } })}>
                                     View/Edit
                                 </button>
                                 <button onClick={() => onDelete(w.id)}>
