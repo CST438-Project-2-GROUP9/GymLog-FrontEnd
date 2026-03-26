@@ -26,6 +26,12 @@ export default function Navbar({ isAdmin = false }) {
                 >
                     Profile
                 </NavLink>
+                <NavLink
+                    to="/workouts"
+                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                >
+                    Workouts
+                </NavLink>
 
                 {isAdmin && (
                     <NavLink
@@ -40,6 +46,8 @@ export default function Navbar({ isAdmin = false }) {
             <button className="navbar-logout" onClick={handleLogout}>
                 Logout
             </button>
+
+
         </nav>
     )
 }

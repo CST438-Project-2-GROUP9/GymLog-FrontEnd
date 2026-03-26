@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { getWorkouts, addWorkout, removeWorkout } from "../api/workouts.js";
+import { useNavigate } from "react-router-dom";
 
 export default function WorkoutsPage() {
     const [workouts, setWorkouts] = useState([]);
     const [name, setName] = useState("");
     const [userId, setUserId] = useState(1); // TEMP until you have /user/currentUser
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     async function load() {
         setError("");
@@ -56,6 +58,9 @@ export default function WorkoutsPage() {
     return (
         <div style={{ maxWidth: 700, margin: "40px auto", padding: 16 }}>
             <h2>Workouts</h2>
+            <button onClick={() => navigate("/dashboard")}>
+                Back to Dashboard
+            </button>
 
             <form onSubmit={onAdd} style={{ display: "flex", gap: 8, marginBottom: 16 }}>
                 <input
@@ -80,11 +85,28 @@ export default function WorkoutsPage() {
             ) : (
                 <ul style={{ listStyle: "none", padding: 0 }}>
                     {workouts.map((w) => (
-                        <li key={w.id} style={{ display: "flex", justifyContent: "space-between", padding: 10, border: "1px solid #ddd", marginBottom: 8 }}>
-              <span>
-                <b>{w.name}</b> (id: {w.id}, userId: {w.userId})
-              </span>
-                            <button onClick={() => onDelete(w.id)}>Delete</button>
+                        <li
+                            key={w.id}
+                            style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                padding: 10,
+                                border: "1px solid #ddd",
+                                marginBottom: 8,
+                            }}
+                        >
+  <span>
+    <b>{w.name}</b> (id: {w.id}, userId: {w.userId})
+  </span>
+
+                            <div style={{ display: "flex", gap: 8 }}>
+                                <button onClick={() => navigate(`/exercises?workoutId=${w.id}`)}>
+                                    View/Edit
+                                </button>
+                                <button onClick={() => onDelete(w.id)}>
+                                    Delete
+                                </button>
+                            </div>
                         </li>
                     ))}
                 </ul>
