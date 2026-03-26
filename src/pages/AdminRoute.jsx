@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 export default function AdminRoute({ children }) {
-    const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080";
+    const API_BASE =
+        import.meta.env.VITE_API_BASE_URL ?? "https://gymlog-backend-5.onrender.com";
 
     const [loading, setLoading] = useState(true);
     const [isAdmin, setIsAdmin] = useState(false);
     const [notLoggedIn, setNotLoggedIn] = useState(false);
 
     useEffect(() => {
- VPAddRem
         let cancelled = false;
 
         fetch(`${API_BASE}/user/currentUser`, {
-       fetch("https://gymlog-backend-5.onrender.com/user/currentUser", {
- main
             credentials: "include",
         })
             .then(async (res) => {
